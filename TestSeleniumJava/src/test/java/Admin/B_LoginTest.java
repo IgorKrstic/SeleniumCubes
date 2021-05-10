@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-public class B_LoginTest { // Ovo su variable za celu klasu
+public class B_LoginTest {
     private static WebDriver driver;
     private static WebElement bv_logo;
     private static WebElement bv_username;
@@ -23,19 +23,19 @@ public class B_LoginTest { // Ovo su variable za celu klasu
     }
     
     @BeforeClass
-    public static void setUpClass() { // Ovo se izvrsava samo na pocetku skripte i samo jednom za celu skriptu
+    public static void setUpClass() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://bvtest.school.cubes.rs/login");
     }
     
     @AfterClass
-    public static void tearDownClass() { // Ovo se izvrsava samo na kraju skripte i samo jednom
+    public static void tearDownClass() {
         driver.quit();
     }
     
     @Before
-    public void setUp() { // Ovo se izvrsava pre svakog testa, za svaki test
+    public void setUp() {
         bv_logo = driver.findElement(By.xpath("//*[@id=\"app-layout\"]/nav/div/div[1]/a"));
         bv_username = driver.findElement(By.xpath("//*[@id=\"app-layout\"]/div/div/div/div/div[2]/form/div[1]/div/input"));
         bv_password = driver.findElement(By.xpath("//*[@id=\"app-layout\"]/div/div/div/div/div[2]/form/div[2]/div/input"));
@@ -48,7 +48,7 @@ public class B_LoginTest { // Ovo su variable za celu klasu
     }
     
     @After
-    public void tearDown() { // Ovo se izvrsava posle svakog testa
+    public void tearDown() {
         driver.navigate().refresh();
     }
 

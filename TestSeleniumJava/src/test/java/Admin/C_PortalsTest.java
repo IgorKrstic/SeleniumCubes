@@ -144,7 +144,7 @@ public class C_PortalsTest {
         WebElement portal_dissable_button = driver.findElement(By.xpath("//*[@id=\"portalsTable\"]/tbody/tr[" + target_row2_num + "]/td[5]/div/button[1]"));
         portal_dissable_button.click();
         
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // Ovo staviti svuda gde se neki element prvo pronalazi pa onda interact sa njim
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         
         WebElement disable_dialogue_button = driver.findElement(By.xpath("/html/body/div[3]/div/div/div[3]/button[2]"));
         disable_dialogue_button.click();
